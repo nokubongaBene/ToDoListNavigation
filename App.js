@@ -13,9 +13,11 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return(
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator >
         <Stack.Screen name="To Do List" component={Home} />
-        <Stack.Screen name="List" component={ToDoList} />
+        <Stack.Screen name="List" component={ToDoList} options={({route}) =>
+          ({title:route.params.title})}
+            />
         </Stack.Navigator>
     </NavigationContainer>
   );

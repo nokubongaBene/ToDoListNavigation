@@ -3,7 +3,8 @@ import {StyleSheet, Text, View,FlatList, TouchableOpacity} from "react-native";
 import Colors from "../constants/Colors.js";
 //import Icon from 'react-native-vector-icons/FontAwesome';
 
-export default () => {
+export default ({route, navigation}) => {
+    const {title, color} = route.params;
     return(
         <View style={styles.container}></View>
     )
