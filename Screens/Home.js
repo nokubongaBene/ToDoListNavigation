@@ -35,9 +35,9 @@ const renderAddListIcon = ({addItemToLists}) => {
 export default ({navigation}) => {
     const lists = 
         [
-            {title:"School", color:Colors.aquamarine},
-            {title:"Personal", color:Colors.aliceblue},
-            {title:"Work", color:Colors.red}]
+            {title:"School", color:Colors.cadetblue},
+            {title:"Personal", color:Colors.cadetblue},
+            {title:"Work", color:Colors.cadetblue}]
     // const addItemToLists (parameter)= item: any
     //     lists.push(item); 
 
@@ -67,12 +67,12 @@ export default ({navigation}) => {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#E8EAED',
+      backgroundColor: Colors.turquoise
     },
-    itemsTitle: {
+    itemTitle: {
       fontSize: 24,
       padding: 5, 
-      color: '#8a2be2',
+      color: Colors.whitesmoke,
     },
    itemContainer:{
       flexDirection: 'row',

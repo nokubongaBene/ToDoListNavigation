@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {StyleSheet, Text, View, TouchableOpacity} from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -28,10 +28,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#E8EAED',
   },
-  itemsTitle: {
+  itemTitle: {
     fontSize: 24,
     padding: 5, 
-    color: '#8a2be2',
+    color: Colors.whitesmoke,
   },
  itemContainer:{
     flexDirection: 'row',
