@@ -1,5 +1,5 @@
 import React from "react";
-import {StyleSheet, Text, View,FlatList,useLayoutEffect, TouchableOpacity, Image} from "react-native";
+import {StyleSheet,ImageBackground, Text, View,FlatList,useLayoutEffect, TouchableOpacity, Image} from "react-native";
 import Colors from "../constants/Colors.js";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -7,12 +7,15 @@ import trash from "../images/trash.png";
 import options from "../images/options.jpg";
 
 //import Icon from 'react-native-vector-icons/FontAwesome';
+const image = {uri: "https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjujLAFC5_qfMhQOCCFx5PpaGQ5ZsO9RgS8Q&usqp=CAU"};
 
 const ListButton = ({title, color, navigation, onDelete}) => {
     return(
+
         <TouchableOpacity onPress={() => navigation.navigate("List", {title:title,color:color})}
              style={[styles.itemContainer, { backgroundColor:color}]}>
         <View><Text style={styles.itemTitle}>{title}</Text></View>
+        
         <View style={{flexDirection:"row"}}>
             <TouchableOpacity onPress={() => {}}>
                 <Image style={{height: 30, width:30, borderRadius:15,}} source={options} />
@@ -47,6 +50,7 @@ export default ({navigation}) => {
     }
     return(
     <View style={styles.container}>
+        <ImageBackground source={image} resizeMode="cover" style={styles.image}>
         {/* <ListButton title="School"/>
         <ListButton title="Personal"/>
         <ListButton title="Work"/> */}
@@ -60,6 +64,7 @@ export default ({navigation}) => {
 
         }}
         />
+        </ImageBackground>
     </View>
     )
 }
@@ -84,6 +89,7 @@ const styles = StyleSheet.create({
       marginHorizontal: 20,
       marginVertical: 10,
       padding: 15,
+      marginTop: 50,
       
     },
     icon:{
@@ -95,6 +101,10 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         marginTop: 50,
-    }
+    },
+    image: {
+        flex: 1,
+        justifyContent: "center"
+      },
   });
   

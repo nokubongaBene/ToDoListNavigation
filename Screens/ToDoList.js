@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import { KeyboardAvoidingView,Alert, StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard, ScrollView } from 'react-native';
+import { KeyboardAvoidingView,Alert,ImageBackground, StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard, ScrollView } from 'react-native';
 import Task from '../component/Task';
+import Colors from "../constants/Colors.js";
 
-
-
+const image = { uri: "https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjujLAFC5_qfMhQOCCFx5PpaGQ5ZsO9RgS8Q&usqp=CAU" };
 
 export default function App() {
   const [task, setTask]= useState("");
@@ -34,6 +34,7 @@ export default function App() {
   
   return (
     <View style={styles.container}>
+        <ImageBackground source={image} resizeMode="cover" style={styles.image}>
       <ScrollView>
       <View style={styles.tasksWrapper}>
   <Text style={styles.sectionTitle}>List</Text>
@@ -77,7 +78,7 @@ export default function App() {
       </TouchableOpacity>
       
       </KeyboardAvoidingView>
-      
+      </ImageBackground>
     </View>
   );
 }
@@ -122,11 +123,15 @@ const styles = StyleSheet.create({
     borderRadius: 60,
     justifyContent: 'center',
     alignItems: 'center',
-    borderColor: '#C0C0C0',
+    borderColor: Colors.aliceblue,
     borderWidth: 1
   },
   addText:{
       marginTop: 100,
-    fontSize: 20,
+    fontSize: 30,
+  },
+  image: {
+    flex: 1,
+    justifyContent: "center"
   },
 });
